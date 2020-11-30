@@ -2,4 +2,16 @@ mkdir species_fastas
 cd species_fastas
 
 #BLAST LF against Pdom
-qsub LAST_LF_vs_Pdom.sh
+qsub BLAST_LF_vs_Pdom.sh
+
+# take only the best BLAST hit for each LF entry
+# first part: sort by column 1 (LF ID), then by column 12 (bit score, higher=better), then by column 11 (E-value, lower=better)
+# second part: take the first entry for each value in column
+# trailing g = numeric sort ; trailing r = reverse sort
+sort -k1,1 -k12,12gr -k11,11g LF_to_Pdom | sort -u -k1,1 --merge > LF_to_Pdom_best
+
+#BLAST Pdom against LF
+qsub BLAST_Pdom_vs_LF.sh
+
+# take only the best BLAST hit for each Pdom entry
+sort -k1,1 -k12,12gr -k11,11g Pdom_to_LF | sort -u -k1,1 --merge > Pdom_to_LF_best
