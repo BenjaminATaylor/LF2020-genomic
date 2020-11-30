@@ -1,0 +1,5 @@
+mkdir species_fastas
+cd species_fastas
+
+#BLAST LF against Pdom
+qsub LAST_LF_vs_Pdom.sh
