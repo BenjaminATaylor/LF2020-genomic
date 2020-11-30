@@ -1,0 +1,5 @@
+# load in java
+module load java/1.8.0_92
+
+# generate genome statistics
+stats.sh in=/lustre/scratch/scratch/ucfaata/lf_2020/genome/Liostenogaster_flavolineata.faa out=/lustre/scratch/scratch/ucfaata/lf_2020/BBstats/LFstats

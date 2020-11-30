@@ -23,7 +23,10 @@
 
 module load blast+/2.2.30/intel-2015-update2
 
-#run BLAST search
+# create BLAST database from Pdom FASTA
+makeblastdb -in species_fastas/Polistes_dominula.faa -dbtype 'prot' -out databases/Pdom_db
+
+# run BLAST search
 # -evalue: equivalent to significance value (lower values = more stringent matching)
 # -outfmt: out put format (6 = tabular)
-blastp -num_threads 8 -evalue 1e-6 -dbtype prot -outfmt 6 -query species_fastas/Liostenogaster_flavolineata.faa -db species_fastas/Polistes_dominula.faa > LF_to_Pdom
+blastp -num_threads 8 -evalue 1e-6 outfmt 6 -query species_fastas/Liostenogaster_flavolineata.faa -db databases/Pdom_db > LF_to_Pdom
