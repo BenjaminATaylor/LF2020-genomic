@@ -1,3 +1,4 @@
+```bash
 mkdir species_fastas
 cd species_fastas
 
@@ -23,3 +24,5 @@ mv GCF_009193385.2_Nvit_psr_1.1_protein.faa Nasonia_vitripennis.faa
 
 #run orthofinder
 qsub orthofinder.sh
+```
+
