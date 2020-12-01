@@ -20,4 +20,4 @@ sort -k1,1 -k12,12gr -k11,11g Pdom_to_LF | sort -u -k1,1 --merge > Pdom_to_LF_be
 awk '{print $2,$1}' Pdom_to_LF_best | sort k1,1 > Pdom_to_LF_best_rev
 
 # get all lines that are common between the two comparisons: these are the reciprocal best BLAST hits
-comm -12 LF_to_Pdom_best Pdom_to_LF_best_rev > Pdom_LF_RBH.tsv
+comm -12 LF_to_Pdom_best Pdom_to_LF_best_rev > Pdom_LF_RBH.txt
