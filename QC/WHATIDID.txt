@@ -31,6 +31,8 @@ conda create -n busco python=3.7
 conda install -c bioconda -c conda-forge busco=4.1.4 augustus=3.3.3
 
 # submit BUSCO job, within which we invoke this conda profile
+# NB: we repeat this three times in separate folders:
+# once each for Eukaryote, Athropod and Hymenopteran BUSCO genes 
 qsub LF_BUSCO.sh
 
 #######################
