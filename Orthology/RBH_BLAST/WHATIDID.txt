@@ -1,4 +1,3 @@
-mkdir species_fastas
 cd species_fastas
 
 #BLAST LF against Pdom

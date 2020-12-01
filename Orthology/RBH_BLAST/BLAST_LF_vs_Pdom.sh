@@ -29,4 +29,4 @@ makeblastdb -in species_fastas/Polistes_dominula.faa -dbtype 'prot' -out databas
 # run BLAST search
 # -evalue: equivalent to significance value (lower values = more stringent matching)
 # -outfmt: out put format (6 = tabular)
-blastp -num_threads 8 -evalue 1e-6 outfmt 6 -query species_fastas/Liostenogaster_flavolineata.faa -db databases/Pdom_db > LF_to_Pdom
+blastp -num_threads 8 -evalue 1e-6 -outfmt 6 -query species_fastas/Liostenogaster_flavolineata.faa -db databases/Pdom_db > LF_to_Pdom
